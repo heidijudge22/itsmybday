@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .image-container {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            border: 3px solid #32CD32;
+            border-radius: 50%;
+            margin: 10px;
+        }
+        h2 {
+            color: #32CD32;
+        }
+        .path {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #32CD32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Direct Image Test</h1>
+    <p>This page tests if the images can be displayed directly.</p>
+    
+    <div class="image-container">
+        <h2>Heidi's Photo</h2>
+        <div class="path">IMG_8978.jpg</div>
+        <br>
+        <img src="IMG_8978.jpg" alt="Heidi">
+    </div>
+    
+    <div class="image-container">
+        <h2>Dedrick's Photo</h2>
+        <div class="path">IMG_8967.jpeg</div>
+        <br>
+        <img src="IMG_8967.jpeg" alt="Dedrick">
+    </div>
+    
+    <a href="index.html" class="back">Back to Main Page</a>
+    
+    <script>
+        // Add status information
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onload = function() {
+                    const div = document.createElement('div');
+                    div.textContent = "✅ Image loaded successfully";
+                    div.style.color = "green";
+                    div.style.marginTop = "10px";
+                    img.parentNode.appendChild(div);
+                };
+                
+                img.onerror = function() {
+                    const div = document.createElement('div');
+                    div.textContent = "❌ Image failed to load";
+                    div.style.color = "red";
+                    div.style.marginTop = "10px";
+                    img.parentNode.appendChild(div);
+                };
+            });
+        });
+    </script>
+</body>
+</html>

@@ -43,7 +43,13 @@
             <div class="bio-container">
                 <div class="bio-box">
                     <div class="bio-photo">
-                        <img src="IMG_8978.jpg" alt="Heidi">
+                        <img src="IMG_8978.jpg" alt="Heidi" 
+                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid #32CD32; box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);"
+                             onload="this.style.border='3px solid green'; this.parentNode.querySelector('div').textContent='Image loaded successfully';"
+                             onerror="this.style.border='2px solid red'; this.style.width='50px'; this.style.height='50px'; this.alt='Image failed to load';"
+                        >
+                        <!-- Debug info -->
+                        <div style="font-size: 10px; color: #888; margin-top: 5px;">Image path: IMG_8978.jpg</div>
                     </div>
                     <h3>Heidi</h3>
                     <div class="bio-item">
@@ -66,7 +72,13 @@
                 
                 <div class="bio-box">
                     <div class="bio-photo">
-                        <img src="IMG_8967.jpeg" alt="Dedrick">
+                        <img src="IMG_8967.jpeg" alt="Dedrick" 
+                             style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 3px solid #32CD32; box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);"
+                             onload="this.style.border='3px solid green'; this.parentNode.querySelector('div').textContent='Image loaded successfully';"
+                             onerror="this.style.border='2px solid red'; this.style.width='50px'; this.style.height='50px'; this.alt='Image failed to load';"
+                        >
+                        <!-- Debug info -->
+                        <div style="font-size: 10px; color: #888; margin-top: 5px;">Image path: IMG_8967.jpeg</div>
                     </div>
                     <h3>Dedrick</h3>
                     <div class="bio-item">
