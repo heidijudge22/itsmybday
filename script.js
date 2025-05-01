@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Create and append the cursor trail elements
-    const trailCount = 5;
+    const trailCount = 15; // Increased from 5 to 15 for a longer trail
     const trails = [];
     
     for (let i = 0; i < trailCount; i++) {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('mousemove', function(e) {
         setTimeout(function() {
             updateTrails(e.pageX, e.pageY);
-        }, 100);
+        }, 50); // Reduced delay from 100ms to 50ms for smoother movement
     });
     
     function updateTrails(x, y) {
@@ -46,8 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
         trails.forEach((trail, index) => {
             trail.element.style.left = trail.x + 'px';
             trail.element.style.top = trail.y + 'px';
-            trail.element.style.width = (10 - index) + 'px';
-            trail.element.style.height = (10 - index) + 'px';
+            // Gradual size reduction for a smoother trail effect
+            const size = Math.max(3, 12 - (index * 0.6));
+            trail.element.style.width = size + 'px';
+            trail.element.style.height = size + 'px';
+            // Add fading opacity for a more ethereal effect
+            trail.element.style.opacity = 1 - (index / trailCount * 0.8);
         });
     }
     
