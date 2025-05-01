@@ -152,6 +152,7 @@ h2 {
     min-width: 280px;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 1.5rem;
+    padding-top: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
     border: 2px solid #32CD32;
@@ -169,6 +170,28 @@ h2 {
     background: linear-gradient(135deg, rgba(255, 0, 255, 0.05) 0%, transparent 50%, rgba(0, 255, 255, 0.05) 100%);
     pointer-events: none;
     z-index: 0;
+}
+
+.bio-photo {
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.bio-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #32CD32;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
 }
 
 .bio-box h3 {
