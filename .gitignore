@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+node_modules/
+.vscode/
+.idea/
+*.tmp
+test_confetti.js
+syntax_check.js

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Stickers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background: #32CD32;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Stickers for Confetti</h1>
+        
+        <h2>Original Images</h2>
+        <img id="image1" src="/Users/hjudge/Desktop/IMG_8978.jpg" style="max-width: 300px; display: none;">
+        <img id="image2" src="/Users/hjudge/Desktop/IMG_8967.jpeg" style="max-width: 300px; display: none;">
+        
+        <h2>Sticker 1 (Person with Drink)</h2>
+        <canvas id="canvas1" width="150" height="150"></canvas>
+        <button id="save1">Save Sticker 1</button>
+        
+        <h2>Sticker 2 (Person with Yellow Drink)</h2>
+        <canvas id="canvas2" width="150" height="150"></canvas>
+        <button id="save2">Save Sticker 2</button>
+        
+        <p id="status"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create sticker 1
+            const img1 = document.getElementById('image1');
+            const canvas1 = document.getElementById('canvas1');
+            const ctx1 = canvas1.getContext('2d');
+            
+            img1.onload = function() {
+                // Draw the image with a circular mask
+                ctx1.save();
+                ctx1.beginPath();
+                ctx1.arc(75, 75, 70, 0, Math.PI * 2);
+                ctx1.closePath();
+                ctx1.clip();
+                
+                // Calculate aspect ratio to focus on the person
+                const aspectRatio = img1.width / img1.height;
+                const sourceWidth = 800;
+                const sourceHeight = sourceWidth / aspectRatio;
+                
+                // Draw the image centered on the face
+                ctx1.drawImage(img1, 
+                    img1.width/2 - sourceWidth/2, // Source x - center on face
+                    img1.height/3 - sourceHeight/3, // Source y - focus higher on image
+                    sourceWidth, sourceHeight, // Source dimensions
+                    0, 0, 150, 150); // Destination dimensions
+                
+                // Add a border
+                ctx1.restore();
+                ctx1.beginPath();
+                ctx1.arc(75, 75, 70, 0, Math.PI * 2);
+                ctx1.lineWidth = 4;
+                ctx1.strokeStyle = '#32CD32'; // Lime green border
+                ctx1.stroke();
+            };
+            
+            // Create sticker 2
+            const img2 = document.getElementById('image2');
+            const canvas2 = document.getElementById('canvas2');
+            const ctx2 = canvas2.getContext('2d');
+            
+            img2.onload = function() {
+                // Draw the image with a circular mask
+                ctx2.save();
+                ctx2.beginPath();
+                ctx2.arc(75, 75, 70, 0, Math.PI * 2);
+                ctx2.closePath();
+                ctx2.clip();
+                
+                // Calculate aspect ratio to focus on the person
+                const aspectRatio = img2.width / img2.height;
+                const sourceWidth = 800;
+                const sourceHeight = sourceWidth / aspectRatio;
+                
+                // Draw the image centered on the face
+                ctx2.drawImage(img2, 
+                    img2.width/2 - sourceWidth/2, // Source x - center on face
+                    img2.height/3 - sourceHeight/3, // Source y - focus higher on image
+                    sourceWidth, sourceHeight, // Source dimensions
+                    0, 0, 150, 150); // Destination dimensions
+                
+                // Add a border
+                ctx2.restore();
+                ctx2.beginPath();
+                ctx2.arc(75, 75, 70, 0, Math.PI * 2);
+                ctx2.lineWidth = 4;
+                ctx2.strokeStyle = '#00FFFF'; // Cyan border
+                ctx2.stroke();
+            };
+            
+            // Save sticker 1
+            document.getElementById('save1').addEventListener('click', function() {
+                const dataUrl = canvas1.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'sticker1.png';
+                link.click();
+                document.getElementById('status').textContent = 'Sticker 1 saved! Right-click and save to /Users/hjudge/birthday_party_website/images/';
+            });
+            
+            // Save sticker 2
+            document.getElementById('save2').addEventListener('click', function() {
+                const dataUrl = canvas2.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.href = dataUrl;
+                link.download = 'sticker2.png';
+                link.click();
+                document.getElementById('status').textContent = 'Sticker 2 saved! Right-click and save to /Users/hjudge/birthday_party_website/images/';
+            });
+        });
+    </script>
+</body>
+</html>

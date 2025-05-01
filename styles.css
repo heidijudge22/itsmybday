@@ -1,0 +1,393 @@
+/* Y2K-Inspired Styles for Birthday Invitation Website */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    line-height: 1.6;
+    background-color: #1a0033; /* Deep purple background */
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 18px;
+    position: relative;
+}
+
+/* Create the "30" background pattern */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ctext x='10' y='90' font-family='Arial' font-size='80' font-weight='bold' fill='%2332CD32' fill-opacity='0.1'%3E30%3C/text%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ctext x='10' y='90' font-family='Arial' font-size='80' font-weight='bold' fill='%2300FFFF' fill-opacity='0.1'%3E30%3C/text%3E%3C/svg%3E");
+    background-position: 0 0, 60px 60px;
+    background-size: 120px 120px;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Add a gradient overlay */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(255, 0, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0, 255, 255, 0.15) 0%, transparent 50%);
+    z-index: -2;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(to right, #32CD32, #00FF00);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(50, 205, 50, 0.5);
+    border: 3px solid #00FFFF;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 0 #00FFFF, 4px 4px 0 #FF00FF;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 #00FFFF;
+    letter-spacing: 1px;
+}
+
+.birthday-name {
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0 #00FFFF, 3px 3px 0 #FF00FF;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.detail-item {
+    flex-basis: 30%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
+    text-align: center;
+    margin-bottom: 1rem;
+    border: 2px solid #32CD32;
+}
+
+.detail-item h3 {
+    font-size: 1.5rem;
+    color: #32CD32;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+}
+
+.detail-item p {
+    margin-bottom: 0.5rem;
+    color: #00FFFF;
+    line-height: 1.4;
+}
+
+/* Bio Section Styles */
+.bio-section {
+    margin-bottom: 3rem;
+}
+
+.bio-section h2 {
+    text-align: center;
+    color: #32CD32;
+    margin-bottom: 1.5rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 0 #00FFFF;
+}
+
+.bio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bio-box {
+    flex: 1;
+    min-width: 280px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
+    border: 2px solid #32CD32;
+    position: relative;
+    overflow: hidden;
+}
+
+.bio-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.05) 0%, transparent 50%, rgba(0, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bio-box h3 {
+    color: #32CD32;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.bio-item {
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bio-label {
+    color: #00FFFF;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    min-width: 120px;
+}
+
+.bio-value {
+    color: #FFFFFF;
+}
+
+.star-bullet {
+    position: relative;
+    padding-left: 20px;
+    text-indent: 0;
+    margin-left: 0;
+}
+
+.star-bullet::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 2px; /* Adjusted to better align with text */
+    color: #E8E8E8; /* Brighter silver color */
+    font-size: 14px;
+    display: inline-block;
+    width: 14px;
+    text-align: center;
+}
+
+/* Style for location link */
+.star-bullet a {
+    color: #00FFFF;
+    text-decoration: none;
+    border-bottom: 1px dotted #32CD32;
+    transition: all 0.3s ease;
+}
+
+.star-bullet a:hover {
+    color: #32CD32;
+    border-bottom: 1px solid #00FFFF;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.rsvp {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
+    margin-bottom: 2rem;
+    border: 2px solid #32CD32;
+}
+
+.rsvp h2 {
+    color: #32CD32;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 2px;
+}
+
+.rsvp p {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #00FFFF;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #32CD32;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #32CD32;
+    border-radius: 4px;
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(50, 205, 50, 0.8);
+    border-color: #00FFFF;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #32CD32;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid #00FFFF;
+    font-family: 'VT323', monospace;
+}
+
+.btn:hover {
+    background-color: #00FF00;
+    box-shadow: 0 0 15px rgba(50, 205, 50, 0.8);
+    transform: scale(1.02);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: #32CD32;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .details {
+        flex-direction: column;
+    }
+    
+    .detail-item {
+        flex-basis: 100%;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bio-container {
+        flex-direction: column;
+    }
+    
+    .bio-box {
+        margin-bottom: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Google Form Styling */
+.google-form-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#google-form {
+    width: 100%;
+    min-height: 700px;
+    border: 2px solid #32CD32;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.google-form-link {
+    margin: 30px 0;
+    text-align: center;
+}
+
+/* Form Status Styling */
+.form-status {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: rgba(50, 205, 50, 0.2);
+    border: 2px solid #32CD32;
+    color: #32CD32;
+}
+
+.form-status.error {
+    display: block;
+    background-color: rgba(255, 0, 0, 0.2);
+    border: 2px solid #FF0000;
+    color: #FF0000;
+}

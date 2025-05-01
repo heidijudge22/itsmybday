@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My 30th Birthday Celebration - Y2K Style!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Heidi and Dedrick are turning 30!</h1>
+            <h2 class="birthday-name">hot people are born in '95... we don't make the rules </h2>
+        </header>
+        
+        <section class="details">
+            <div class="detail-item">
+                <h3>When</h3>
+                <p class="star-bullet">Saturday, August 23rd </p>
+                <p class="star-bullet">4:00 - 8:00 pm</p>
+                <p class="star-bullet">** until late if we're crazy **</p>
+                
+            </div>
+            
+            <div class="detail-item">
+                <h3>Where</h3>
+                <p class="star-bullet">Good Bar, Brooklyn</p>
+                <p class="star-bullet"><a href="https://www.google.com/maps/place/Good+Bar/data=!4m2!3m1!1s0x0:0xf91e7366af03e8f9?sa=X&ved=1t:2428&ictx=111" target="_blank">1 Bedford Ave</a></p>
+                <p class="star-bullet">Brooklyn, NY 11222</p>
+            </div>
+            
+            <div class="detail-item">
+                <h3>Details</h3>
+                <p class="star-bullet">plan to open your own tab, we'll take an espresso martini while you're at it </p>
+                <p class="star-bullet">DJ's will be spinning vinyl so wear your dancing shoes</p>
+                <p class="star-bullet">Tiny Tops encouraged</p>
+            </div>
+        </section>
+        
+        <section class="bio-section">
+            <h2>Meet the Birthday Duo</h2>
+            <div class="bio-container">
+                <div class="bio-box">
+                    <h3>Heidi</h3>
+                    <div class="bio-item">
+                        <span class="bio-label">Name:</span>
+                        <span class="bio-value">Heidi Judge</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-label">Status:</span>
+                        <span class="bio-value">Single</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-label">Drink of Choice:</span>
+                        <span class="bio-value">Espresso Martini</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-label">Cash Tag:</span>
+                        <span class="bio-value">$heidijudge</span>
+                    </div>
+                </div>
+                
+                <div class="bio-box">
+                    <h3>Dedrick</h3>
+                    <div class="bio-item">
+                        <span class="bio-label">Name:</span>
+                        <span class="bio-value">Dedrick</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-label">Status:</span>
+                        <span class="bio-value">Single</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-label">Drink of Choice:</span>
+                        <span class="bio-value">Vodka Sprite</span>
+                    </div>
+                    <div class="bio-item">
+                        <span class="bio-label">Cash Tag:</span>
+                        <span class="bio-value">$dedrick</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="rsvp">
+            <h2>RSVP</h2>
+            <p>Please let me know if you can make it by August 5th</p>
+            <form id="rsvp-form" action="https://formspree.io/f/your-formspree-code" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attending">Will you be attending?</label>
+                    <select id="attending" name="attending" required>
+                        <option value="">-- Select --</option>
+                        <option value="yes">Yes, I'll be there!</option>
+                        <option value="no">Sorry, I can't make it</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guests">Number of guests (including yourself)</label>
+                    <input type="number" id="guests" name="guests" min="1" max="2" value="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message (optional)</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+                </div>
+                
+                <!-- Hidden fields for Formspree configuration -->
+                <input type="hidden" name="_next" value="thanks.html">
+                <input type="hidden" name="_subject" value="New RSVP for 30th Birthday Party!">
+                <input type="hidden" name="_cc" value="heidijudge22@gmail.com">
+                
+                <button type="submit" class="btn">Submit RSVP</button>
+                <div id="form-status" class="form-status"></div>
+            </form>
+        </section>
+        
+        <footer>
+            <p>I can't wait to celebrate with you!</p>
+            <p>For questions, call me, beep me</p>
+        </footer>
+    </div>
+
+    <script src="confetti.js"></script>
+    <script src="script.js"></script>
+    <script src="form-handler.js"></script>
+</body>
+</html>

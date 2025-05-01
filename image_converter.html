@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Data URL Converter</title>
+</head>
+<body>
+    <h1>Image to Data URL Converter</h1>
+    <p>This tool helps convert image files to data URLs that can be used directly in the code.</p>
+    
+    <div>
+        <h2>Sticker 1 (JPEG)</h2>
+        <img id="img1" src="images/IMG_8967.jpeg" width="150" height="150">
+        <h2>Sticker 2 (JPEG)</h2>
+        <img id="img2" src="images/IMG_8978.jpg" width="150" height="150">
+    </div>
+    
+    <div id="output" style="margin-top: 20px;"></div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const output = document.getElementById('output');
+            
+            // Create data URLs
+            const img1 = document.getElementById('img1').src;
+            const img2 = document.getElementById('img2').src;
+            
+            output.innerHTML = `
+                <p>Image 1 URL: ${img1}</p>
+                <p>Image 2 URL: ${img2}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
