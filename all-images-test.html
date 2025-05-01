@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Images Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+        img {
+            max-width: 300px;
+            border: 1px solid #333;
+            display: block;
+            margin: 10px 0;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .path {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 5px;
+            border-radius: 3px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Images Test</h1>
+    <p>This page tests all possible image paths to help debug the 404 issue.</p>
+    
+    <!-- Root directory images -->
+    <div class="image-container">
+        <h2>Root Directory Images</h2>
+        
+        <div class="path">IMG_8967.jpeg</div>
+        <img src="IMG_8967.jpeg" alt="Image 8967 from root">
+        
+        <div class="path">IMG_8968.jpeg</div>
+        <img src="IMG_8968.jpeg" alt="Image 8968 from root">
+        
+        <div class="path">IMG_8978.jpg</div>
+        <img src="IMG_8978.jpg" alt="Image 8978 from root">
+    </div>
+    
+    <!-- Images directory -->
+    <div class="image-container">
+        <h2>Images Directory</h2>
+        
+        <div class="path">images/IMG_8967.jpeg</div>
+        <img src="images/IMG_8967.jpeg" alt="Image 8967 from images dir">
+        
+        <div class="path">images/IMG_8978.jpg</div>
+        <img src="images/IMG_8978.jpg" alt="Image 8978 from images dir">
+        
+        <div class="path">images/sticker1.svg</div>
+        <img src="images/sticker1.svg" alt="Sticker 1">
+        
+        <div class="path">images/sticker2.svg</div>
+        <img src="images/sticker2.svg" alt="Sticker 2">
+    </div>
+    
+    <!-- Case variants -->
+    <div class="image-container">
+        <h2>Case Variants (GitHub Pages can be case-sensitive)</h2>
+        
+        <div class="path">Images/IMG_8967.jpeg</div>
+        <img src="Images/IMG_8967.jpeg" alt="Image 8967 capital I">
+        
+        <div class="path">IMAGES/IMG_8967.jpeg</div>
+        <img src="IMAGES/IMG_8967.jpeg" alt="Image 8967 all caps">
+        
+        <div class="path">images/img_8967.jpeg</div>
+        <img src="images/img_8967.jpeg" alt="Image 8967 lowercase">
+    </div>
+    
+    <p><a href="index.html">Back to main page</a></p>
+</body>
+</html>
