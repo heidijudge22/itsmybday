@@ -92,12 +92,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 to { transform: scale(1.05); }
             }
             
+            @keyframes highlight {
+                from { color: #FF00FF; }
+                to { color: #FFFFFF; }
+            }
+            
             .modal-star {
                 display: inline-block;
                 color: #E8E8E8;
                 font-size: 24px;
                 margin: 0 8px;
                 animation: pulse 1s infinite alternate;
+            }
+            
+            .drinks-reminder {
+                animation: highlight 1.5s infinite alternate;
+                text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
             }
         `;
         document.head.appendChild(style);
@@ -115,7 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h2 style="color: #32CD32; font-size: 36px; margin-bottom: 20px; text-shadow: 2px 2px 0 #00FFFF;">AWESOME!</h2>
                 <p style="color: #00FFFF; font-size: 24px; margin-bottom: 15px;">Thanks for your RSVP, ${name}!</p>
                 <p style="color: white; font-size: 20px; margin-bottom: 15px;">We can't wait to celebrate with you${guests > 1 ? ' and your guest' : ''}!</p>
-                <p style="color: #32CD32; font-size: 18px; margin-bottom: 25px;">Your details have been saved. See you on August 23rd!</p>
+                <p style="color: #32CD32; font-size: 18px; margin-bottom: 15px;">Your details have been saved. See you on August 23rd!</p>
+                <p style="color: #FF00FF; font-size: 16px; margin-bottom: 25px;"><em>(Psst... drinks on you? Heidi: $heidijudge | Dedrick: $dedrick)</em></p>
                 <div style="margin-top: 20px;">
                     <span class="modal-star" style="animation-delay: 0.9s;">★</span>
                     <span class="modal-star" style="animation-delay: 0.3s;">★</span>
@@ -127,7 +138,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h2 style="color: #FF00FF; font-size: 36px; margin-bottom: 20px; text-shadow: 2px 2px 0 #00FFFF;">BUMMER!</h2>
                 <p style="color: #00FFFF; font-size: 24px; margin-bottom: 15px;">Thanks for letting us know, ${name}.</p>
                 <p style="color: white; font-size: 20px; margin-bottom: 15px;">We're sorry you can't make it to our party!</p>
-                <p style="color: #32CD32; font-size: 18px; margin-bottom: 25px;">We'll miss you, but thanks for responding.</p>
+                <p style="color: #32CD32; font-size: 18px; margin-bottom: 15px;">We'll miss you, but thanks for responding.</p>
+                <p class="drinks-reminder" style="font-size: 20px; margin-bottom: 15px;">We're sad you can't make it, but reminder you can always buy us drinks from afar 💸 ;)</p>
+                <p style="color: #00FFFF; font-size: 16px; margin-bottom: 25px;"><em>Heidi: $heidijudge | Dedrick: $dedrick</em></p>
             `;
         }
         
